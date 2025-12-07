@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-y20m5mzsjjwd_iip3@v09@=-wk+f-jn445f@aa79=$dlii1ts7'
+MERAKI_API_SECRET_KEY = os.getenv("MERAKI_API_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +38,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'apps.accounts.apps.AccountsConfig',
     'apps.devices.apps.DevicesConfig',
+    'apps.integrations.apps.IntegrationsConfig',
     'apps.jobs.apps.JobsConfig',
     'apps.networks.apps.NetworksConfig',
     'apps.organizations.apps.OrganizationsConfig',
