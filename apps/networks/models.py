@@ -21,7 +21,7 @@ class MerakiNetwork(models.Model):
         on_delete=models.CASCADE,
         related_name='networks'
     )
-    orgnization_id = models.CharField(max_length=50)
+    meraki_orgnization_id = models.CharField(max_length=50)
     network_id = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=100)
     time_zone = models.CharField(max_length=100)
