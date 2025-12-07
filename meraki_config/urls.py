@@ -20,5 +20,10 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('apps.accounts.urls', namespace='accounts')),
     path('admin/', admin.site.urls),
+    path('devices/', include('apps.devices.urls', namespace='devices')),
+    path('jobs/', include('apps.jobs.urls', namespace='jobs')),
+    path('networks/', include('apps.networks.urls', namespace='networks')),
     path('organizations/', include('apps.organizations.urls', namespace='organizations')),
+    path('sync/', include('apps.sync.urls', namespace='sync')),
+
 ]
