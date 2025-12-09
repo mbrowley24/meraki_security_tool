@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.jobs.apps.JobsConfig',
     'apps.networks.apps.NetworksConfig',
     'apps.organizations.apps.OrganizationsConfig',
+    'apps.policies.apps.PoliciesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

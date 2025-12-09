@@ -24,6 +24,7 @@ urlpatterns = [
     path('jobs/', include('apps.jobs.urls', namespace='jobs')),
     path('networks/', include('apps.networks.urls', namespace='networks')),
     path('organizations/', include('apps.organizations.urls', namespace='organizations')),
+    path('policies/', include('apps.policies.urls', namespace='policies')),
     path('sync/', include('apps.sync.urls', namespace='sync')),
 
 ]

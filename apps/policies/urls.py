@@ -1,6 +1,6 @@
 from django.urls import path
 
-app_name = "networks"
+app_name = "policies"
 
 urlpatterns = [
     

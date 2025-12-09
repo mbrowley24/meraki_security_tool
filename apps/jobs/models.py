@@ -6,7 +6,7 @@ from ..devices.models import Device
 import uuid
 
 
-class ChangeJobs(models.Model):
+class ChangeJob(models.Model):
     
     STATUS_CHOICES = (
         ("pending", "Pending"),
