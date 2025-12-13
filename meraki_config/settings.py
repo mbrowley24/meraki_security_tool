@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.networks.apps.NetworksConfig',
     'apps.organizations.apps.OrganizationsConfig',
     'apps.policies.apps.PoliciesConfig',
+    'apps.sync.apps.SyncConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

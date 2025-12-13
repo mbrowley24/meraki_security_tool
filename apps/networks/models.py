@@ -16,12 +16,12 @@ class MerakiNetwork(models.Model):
         editable=False, 
         unique=True
         )
-    orgnization = models.ForeignKey(
+    organization = models.ForeignKey(
         Organization,
         on_delete=models.CASCADE,
         related_name='networks'
     )
-    meraki_orgnization_id = models.CharField(max_length=50)
+    meraki_organization_id = models.CharField(max_length=50)
     network_id = models.CharField(max_length=50, unique=True)
     name = models.CharField(max_length=100)
     time_zone = models.CharField(max_length=100)

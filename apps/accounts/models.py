@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from ..organizations.models import Organization
 import uuid
 
 class UserProfile(models.Model):
@@ -11,6 +12,12 @@ class UserProfile(models.Model):
         editable=False,
         unique=True,
     )
+
+    organization = models.ForeignKey(
+        Organization, on_delete=models.CASCADE,
+        related_name='user_profiles',
+        null=True,
+        )
 
 
     def __str__(self):

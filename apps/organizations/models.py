@@ -1,6 +1,25 @@
 from django.db import models
 from django.conf import settings
 
+
+class Organization(models.Model):
+    public_id = models.UUIDField(
+        unique=True,
+        editable=False
+        )
+    name = models.CharField(
+        max_length=255, 
+        blank=False,
+        unique=True
+        )
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
 class OrganizationMembership(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
@@ -8,7 +27,7 @@ class OrganizationMembership(models.Model):
         related_name="organization_memberships"
         )
     organization = models.ForeignKey(
-        "organizations.Organization", 
+        Organization, 
         on_delete=models.CASCADE,
         related_name="memberships"
         )
@@ -28,21 +47,3 @@ class OrganizationMembership(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.organization.name} ({self.role})"
-
-
-class Organization(models.Model):
-    public_id = models.UUIDField(
-        unique=True,
-        editable=False
-        )
-    name = models.CharField(
-        max_length=255, 
-        blank=False,
-        unique=True
-        )
-    is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
